@@ -1,0 +1,416 @@
+/* components/card-template/card-template.wxss */
+
+.card-container {
+  position: relative;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin: 20rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10rpx);
+  overflow: hidden;
+  min-height: 400rpx;
+  transition: all 0.3s ease;
+}
+
+.card-container:active {
+  transform: scale(0.98);
+}
+
+/* 加载骨架屏 */
+.skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.skeleton-header {
+  height: 40rpx;
+  width: 120rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20rpx;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+.skeleton-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.skeleton-line {
+  height: 32rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16rpx;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.skeleton-footer {
+  height: 80rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16rpx;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.4; }
+}
+
+/* 卡片内容 */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 装饰元素 */
+.decoration {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.decoration-dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.decoration-line {
+  width: 40rpx;
+  height: 2rpx;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+/* 类型标签 */
+.card-type-badge {
+  align-self: flex-start;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  backdrop-filter: blur(10rpx);
+}
+
+.card-type-badge.minimal {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.card-type-badge.artistic {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card-type-badge.vibrant {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 主要内容 */
+.card-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-text {
+  font-size: 32rpx;
+  line-height: 1.6;
+  margin-bottom: 30rpx;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1rpx;
+}
+
+.content-text.minimal {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.content-text.artistic {
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.content-text.vibrant {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* 分隔线 */
+.divider {
+  height: 1rpx;
+  margin: 20rpx 0;
+}
+
+.divider.minimal {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.divider.artistic {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.divider.vibrant {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 卡片信息 */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.date-text, .like-count {
+  font-size: 24rpx;
+  opacity: 0.7;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  gap: 20rpx;
+  justify-content: center;
+}
+
+.action-btn {
+  flex: 1;
+  max-width: 200rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 50rpx;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  font-size: 28rpx;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10rpx);
+}
+
+.action-btn.minimal {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.action-btn.artistic {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.action-btn.vibrant {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.action-btn.favorited {
+  background: rgba(255, 107, 129, 0.2) !important;
+  color: #ff6b81 !important;
+}
+
+.btn-hover {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.btn-icon {
+  font-size: 32rpx;
+}
+
+.btn-text {
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+/* 模板特定装饰 */
+
+/* 极简模板 */
+.minimal-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.1);
+}
+
+.corner.top-left {
+  top: 20rpx;
+  left: 20rpx;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner.bottom-right {
+  bottom: 20rpx;
+  right: 20rpx;
+  border-left: none;
+  border-top: none;
+}
+
+/* 文艺模板 */
+.artistic-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120rpx;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+  z-index: 1;
+}
+
+/* 活力模板 */
+.vibrant-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.bubble-1 {
+  width: 80rpx;
+  height: 80rpx;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  width: 60rpx;
+  height: 60rpx;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.bubble-3 {
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 20%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20rpx) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* 加载动画 */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 4rpx solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  opacity: 0.8;
+}
+
+/* 响应式适配 */
+@media (min-width: 768rpx) {
+  .card-container {
+    margin: 40rpx;
+    padding: 60rpx;
+  }
+  
+  .content-text {
+    font-size: 36rpx;
+  }
+}
+
+@media (max-width: 375rpx) {
+  .card-container {
+    margin: 10rpx;
+    padding: 30rpx;
+  }
+  
+  .content-text {
+    font-size: 28rpx;
+  }
+}

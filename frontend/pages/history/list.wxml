@@ -1,0 +1,92 @@
+<!-- 历史灵感页面 -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="navbar">
+    <text class="title">历史灵感</text>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-section">
+    <view class="search-bar">
+      <text class="search-icon">🔍</text>
+      <input 
+        class="search-input" 
+        placeholder="搜索历史卡片..."
+        value="{{searchKeyword}}"
+        bindinput="onSearchInput"
+      />
+    </view>
+    <button class="filter-btn" bindtap="onFilter">
+      <text>筛选</text>
+    </button>
+  </view>
+
+  <!-- 筛选标签 -->
+  <view class="filter-tags">
+    <button class="tag-btn {{activeFilter === 'all' ? 'active' : ''}}" bindtap="onFilterChange" data-filter="all">
+      <text>全部</text>
+    </button>
+    <button class="tag-btn {{activeFilter === 'favorite' ? 'active' : ''}}" bindtap="onFilterChange" data-filter="favorite">
+      <text>⭐ 收藏</text>
+    </button>
+    <button class="tag-btn {{activeFilter === 'inspirational' ? 'active' : ''}}" bindtap="onFilterChange" data-filter="inspirational">
+      <text>励志</text>
+    </button>
+    <button class="tag-btn {{activeFilter === 'poetry' ? 'active' : ''}}" bindtap="onFilterChange" data-filter="poetry">
+      <text>诗歌</text>
+    </button>
+    <button class="tag-btn {{activeFilter === 'philosophy' ? 'active' : ''}}" bindtap="onFilterChange" data-filter="philosophy">
+      <text>哲理</text>
+    </button>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 卡片列表 -->
+  <scroll-view class="card-list" scroll-y wx:if="{{!loading}}">
+    <view class="card-item" wx:for="{{cards}}" wx:key="id" bindtap="onCardDetail" data-id="{{item.id}}">
+      <view class="card-header">
+        <text class="card-date">{{item.date}}</text>
+        <view class="card-type">
+          <text>{{item.typeText}}</text>
+        </view>
+      </view>
+      <view class="card-content">
+        <text class="card-text">{{item.content}}</text>
+      </view>
+      <view class="card-footer">
+        <view class="card-stats">
+          <text class="stat-item">❤️ {{item.likes || 0}}</text>
+          <text class="stat-item">👍 {{item.thumbs || 0}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{cards.length === 0}}">
+      <view class="empty-icon">{{activeFilter === 'favorite' ? '⭐' : '📭'}}</view>
+      <text class="empty-title">{{activeFilter === 'favorite' ? '暂无收藏卡片' : '暂无历史记录'}}</text>
+      <text class="empty-desc">{{activeFilter === 'favorite' ? '快去收藏喜欢的卡片吧' : '快去发现更多灵感卡片吧'}}</text>
+      <button class="empty-btn" bindtap="goToIndex">
+        <text>去发现</text>
+      </button>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 底部导航栏 -->
+<view class="tabbar">
+  <view class="tab-item" bindtap="onHome">
+    <text class="tab-icon">🏠</text>
+  </view>
+  <view class="tab-item active">
+    <text class="tab-icon">📜</text>
+  </view>
+  <view class="tab-item" bindtap="onProfile">
+    <text class="tab-icon">👤</text>
+  </view>
+</view>

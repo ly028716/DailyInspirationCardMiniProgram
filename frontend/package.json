@@ -1,0 +1,30 @@
+{
+  "name": "daily-inspiration-miniapp",
+  "version": "1.0.0",
+  "description": "AI每日灵感卡片小程序",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npm run dev:weapp",
+    "build": "npm run build:weapp",
+    "dev:weapp": "taro build --type weapp --watch",
+    "build:weapp": "taro build --type weapp"
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.11.7"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^3.12.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/daily-inspiration-miniapp.git"
+  },
+  "keywords": [
+    "微信小程序",
+    "AI",
+    "灵感卡片",
+    "Vant Weapp"
+  ],
+  "author": "开发团队",
+  "license": "MIT"
+}

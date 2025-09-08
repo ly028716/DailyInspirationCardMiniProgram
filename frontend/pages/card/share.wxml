@@ -1,0 +1,27 @@
+<!-- 自定义分享面板 -->
+<view class="share-panel-mask" wx:if="{{showSharePanel}}" bindtap="onCloseShare">
+  <view class="share-panel" catchtap>
+    <view class="share-title">分享至</view>
+    <view class="share-options">
+      <button class="share-option" open-type="share">
+        <view class="share-icon-wrapper">
+          <text class="share-emoji">💬</text>
+        </view>
+        <text class="share-text">微信好友</text>
+      </button>
+      <button class="share-option" bindtap="onShareImage">
+        <view class="share-icon-wrapper">
+          <text class="share-emoji">🖼️</text>
+        </view>
+        <text class="share-text">生成卡片</text>
+      </button>
+      <button class="share-option" bindtap="onShareLink">
+        <view class="share-icon-wrapper">
+          <text class="share-emoji">🔗</text>
+        </view>
+        <text class="share-text">复制链接</text>
+      </button>
+    </view>
+    <button class="cancel-btn" bindtap="onCloseShare">取消</button>
+  </view>
+</view>

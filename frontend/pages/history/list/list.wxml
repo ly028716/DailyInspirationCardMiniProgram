@@ -1,0 +1,88 @@
+<!-- 历史记录页面 -->
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-section">
+    <van-search
+      value="{{searchValue}}"
+      placeholder="搜索历史卡片"
+      bind:search="onSearch"
+      background="#f8f8f8"
+      shape="round"
+    />
+  </view>
+
+  <!-- 筛选标签 -->
+  <view class="filter-section">
+    <scroll-view scroll-x class="filter-scroll">
+      <view class="filter-tags">
+        <van-tag
+          wx:for="{{filterTags}}"
+          wx:key="value"
+          type="{{activeFilter === item.value ? 'primary' : 'default'}}"
+          bindtap="onFilterChange"
+          data-value="{{item.value}}"
+          class="filter-tag"
+          plain="{{activeFilter !== item.value}}"
+        >
+          {{item.text}}
+        </van-tag>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 卡片列表 -->
+  <scroll-view
+    class="card-list"
+    scroll-y
+    bindscrolltolower="onLoadMore"
+    refresher-enabled
+    refresher-triggered="{{refreshing}}"
+    bindrefresherrefresh="onRefresh"
+  >
+    <view
+      wx:for="{{historyCards}}"
+      wx:key="id"
+      class="history-card"
+      bindtap="onCardDetail"
+      data-id="{{item.id}}"
+    >
+      <view class="card-header">
+        <text class="card-type">{{item.type}}</text>
+        <text class="card-date">{{item.date}}</text>
+      </view>
+      
+      <view class="card-content">
+        <text class="card-text">{{item.content}}</text>
+      </view>
+      
+      <view class="card-footer">
+        <view class="card-stats">
+          <text class="stat-item">
+            <van-icon name="like" size="24rpx" />
+            {{item.likes}}
+          </text>
+          <text class="stat-item">
+            <van-icon name="star" size="24rpx" />
+            {{item.isFavorited ? '已收藏' : '收藏'}}
+          </text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 加载更多 -->
+    <view class="load-more" wx:if="{{loading}}">
+      <van-loading size="32rpx" color="#FF8C42">加载中...</van-loading>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{!historyCards.length && !loading}}">
+      <van-icon name="records" size="120rpx" color="#ddd" />
+      <text class="empty-text">暂无历史记录</text>
+    </view>
+
+    <!-- 加载完成 -->
+    <view class="load-complete" wx:if="{{noMoreData && historyCards.length}}">
+      <text>已加载全部</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>认证测试</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>小程序认证调试</h1>
+    <div>
+        <h2>问题分析</h2>
+        <p>小程序返回403 Forbidden，表示：</p>
+        <ul>
+            <li>1. token格式不正确</li>
+            <li>2. token已过期</li>
+            <li>3. Authorization头格式错误</li>
+            <li>4. 微信小程序网络配置问题</li>
+        </ul>
+    </div>
+    
+    <div>
+        <h2>解决方案</h2>
+        <ol>
+            <li><strong>检查token存储</strong>：确保小程序正确存储了token</li>
+            <li><strong>检查网络配置</strong>：微信小程序需要配置合法域名</li>
+            <li><strong>检查请求头</strong>：确保Authorization头格式正确</li>
+        </ol>
+    </div>
+    
+    <div>
+        <h2>调试步骤</h2>
+        <ol>
+            <li>在微信开发者工具中打开调试模式</li>
+            <li>检查控制台网络请求</li>
+            <li>验证token是否正确获取</li>
+            <li>检查Storage中的token值</li>
+        </ol>
+    </div>
+    
+    <div>
+        <h2>常见问题</h2>
+        <ul>
+            <li><strong>localhost问题</strong>：微信小程序不支持localhost，需要使用IP地址</li>
+            <li><strong>端口问题</strong>：确保8000端口开放</li>
+            <li><strong>SSL问题</strong>：生产环境需要HTTPS</li>
+        </ul>
+    </div>
+    
+    <script>
+        // 模拟小程序调试信息
+        console.log("=== 小程序调试信息 ===");
+        console.log("1. 检查token存储:");
+        console.log("   wx.getStorageSync('token') 应该返回有效token");
+        console.log("");
+        console.log("2. 检查网络请求:");
+        console.log("   请求URL: https://api.example.com/api/cards/daily");
+        console.log("   请求头: Authorization: Bearer <token>");
+        console.log("");
+        console.log("3. 微信小程序配置:");
+        console.log("   需要在小程序管理后台配置request合法域名");
+        console.log("   开发环境可以使用: https://api.example.com");
+    </script>
+</body>
+</html>

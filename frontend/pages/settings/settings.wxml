@@ -1,0 +1,133 @@
+<!-- 设置页面 - 符合UI原型 -->
+<view class="settings-container">
+  <!-- 顶部导航栏 -->
+  <view class="navbar">
+    <view class="nav-left" bindtap="onBack">
+      <text class="back-icon">←</text>
+    </view>
+    <view class="nav-title">设置</view>
+    <view class="nav-right"></view>
+  </view>
+
+  <!-- 主题选择 -->
+  <view class="settings-section">
+    <view class="section-item">
+      <text class="section-icon">🎨</text>
+      <text class="section-title">主题选择</text>
+    </view>
+    <view class="theme-options">
+      <view 
+        class="theme-btn {{currentTheme === 'light' ? 'active' : ''}}" 
+        data-theme="light" 
+        bindtap="onThemeChange"
+      >
+        <text>明亮</text>
+      </view>
+      <view 
+        class="theme-btn {{currentTheme === 'dark' ? 'active' : ''}}" 
+        data-theme="dark" 
+        bindtap="onThemeChange"
+      >
+        <text>暗黑</text>
+      </view>
+      <view 
+        class="theme-btn {{currentTheme === 'auto' ? 'active' : ''}}" 
+        data-theme="auto" 
+        bindtap="onThemeChange"
+      >
+        <text>跟随系统</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 卡片设置 -->
+  <view class="settings-section">
+    <view class="section-header">
+      <text class="section-title">卡片设置</text>
+    </view>
+    
+    <view class="setting-item" bindtap="onFontSizeChange">
+      <view class="item-left">
+        <text class="item-icon">🔤</text>
+        <text class="item-title">字体大小</text>
+      </view>
+      <view class="item-right">
+        <text class="item-value">{{fontSizeText}}</text>
+      </view>
+    </view>
+
+    <view class="setting-item" bindtap="onCardTypeChange">
+      <view class="item-left">
+        <text class="item-icon">🎭</text>
+        <text class="item-title">卡片类型</text>
+      </view>
+      <view class="item-right">
+        <text class="item-value">{{cardTypeText}}</text>
+      </view>
+    </view>
+
+    <view class="setting-item" bindtap="onCardSourceChange">
+      <view class="item-left">
+        <text class="item-icon">📝</text>
+        <text class="item-title">卡片来源</text>
+      </view>
+      <view class="item-right">
+        <text class="item-value">{{cardSourceText}}</text>
+      </view>
+    </view>
+
+    <view class="setting-item" bindtap="onRefreshFrequencyChange">
+      <view class="item-left">
+        <text class="item-icon">🔄</text>
+        <text class="item-title">刷新频率</text>
+      </view>
+      <view class="item-right">
+        <text class="item-value">{{refreshFrequencyText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 通知设置 -->
+  <view class="settings-section">
+    <view class="section-header">
+      <text class="section-title">通知设置</text>
+    </view>
+    
+    <view class="setting-item">
+      <view class="item-left">
+        <text class="item-icon">🔔</text>
+        <text class="item-title">每日推送</text>
+      </view>
+      <view class="item-right">
+        <switch 
+          checked="{{pushEnabled}}" 
+          bindchange="onPushChange"
+          color="#FF8C42"
+        />
+      </view>
+    </view>
+
+    <view class="setting-item" bindtap="onPushTimeChange">
+      <view class="item-left">
+        <text class="item-icon">⏰</text>
+        <text class="item-title">推送时间</text>
+      </view>
+      <view class="item-right">
+        <text class="item-value">{{pushTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部导航栏 -->
+<view class="tabbar">
+  <view class="tab-item" bindtap="onHome">
+    <text class="tab-icon">🏠</text>
+  </view>
+  <view class="tab-item" bindtap="onHistory">
+    <text class="tab-icon">📜</text>
+  </view>
+  <view class="tab-item">
+    <text class="tab-icon">👤</text>
+  </view>
+</view>

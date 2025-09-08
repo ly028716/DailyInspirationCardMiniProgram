@@ -1,0 +1,285 @@
+/* 历史灵感页面样式 - 匹配UI原型 */
+
+/* 主容器 */
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 88rpx; /* 为底部导航栏留出空间 */
+}
+
+/* 顶部导航栏 */
+.navbar {
+  height: 88rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* 搜索区域 */
+.search-section {
+  padding: 40rpx;
+  display: flex;
+  gap: 20rpx;
+  align-items: center;
+}
+
+.search-bar {
+  flex: 1;
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.search-icon {
+  font-size: 32rpx;
+  color: #999999;
+  margin-right: 20rpx;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333333;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.filter-btn {
+  width: 90rpx;
+  height: 80rpx;
+  background: white;
+  border: 2rpx solid #FF8C42;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #FF8C42;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-btn:active {
+  background: #f0f0f0;
+}
+
+/* 筛选标签 */
+.filter-tags {
+  padding: 0 40rpx 40rpx;
+  display: flex;
+  gap: 20rpx;
+}
+
+.tag-btn {
+  height: 60rpx;
+  padding: 0 30rpx;
+  background: #f5f5f5;
+  border-radius: 30rpx;
+  border: none;
+  font-size: 24rpx;
+  color: #666666;
+  transition: all 0.3s ease;
+}
+
+.tag-btn.active {
+  background: #FF8C42;
+  color: white;
+}
+
+.tag-btn:active {
+  transform: scale(0.95);
+}
+
+/* 加载状态 */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400rpx;
+  gap: 40rpx;
+}
+
+.loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 6rpx solid #f0f0f0;
+  border-top: 6rpx solid #FF8C42;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  color: #666666;
+  font-size: 28rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 卡片列表 */
+.card-list {
+  height: calc(100vh - 400rpx);
+  padding: 0 40rpx;
+}
+
+.card-item {
+  background: white;
+  border-radius: 32rpx;
+  margin-bottom: 40rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-item:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.card-date {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.card-type {
+  padding: 10rpx 20rpx;
+  background: #f0f0f0;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+  color: #666666;
+}
+
+.card-content {
+  margin-bottom: 30rpx;
+}
+
+.card-text {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-stats {
+  display: flex;
+  gap: 40rpx;
+}
+
+.stat-item {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 200rpx 60rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 120rpx;
+  margin-bottom: 40rpx;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.empty-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+.empty-desc {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 60rpx;
+}
+
+.empty-btn {
+  padding: 24rpx 48rpx;
+  background: #FF8C42;
+  color: white;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  box-shadow: 0 4rpx 20rpx rgba(255, 140, 66, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.empty-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 2rpx 10rpx rgba(255, 140, 66, 0.3);
+}
+
+/* 底部导航栏 */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 88rpx;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+}
+
+.tab-icon {
+  font-size: 48rpx;
+  color: #999999;
+  transition: all 0.3s ease;
+}
+
+.tab-item.active .tab-icon {
+  color: #FF8C42;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20rpx);
+  }
+  60% {
+    transform: translateY(-10rpx);
+  }
+}

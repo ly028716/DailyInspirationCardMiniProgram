@@ -1,0 +1,59 @@
+<svg width="375" height="667" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="375" height="667" fill="#f5f5f5"/>
+  
+  <!-- 顶部导航栏 -->
+  <rect x="0" y="0" width="375" height="44" fill="white"/>
+  <text x="187.5" y="28" font-family="Arial" font-size="18" fill="#333333" text-anchor="middle" font-weight="bold">历史灵感</text>
+  
+  <!-- 搜索栏 -->
+  <rect x="20" y="60" width="280" height="40" rx="20" ry="20" fill="#f5f5f5"/>
+  <text x="40" y="85" font-family="Arial" font-size="16" fill="#999999">🔍</text>
+  <text x="70" y="85" font-family="Arial" font-size="14" fill="#999999">搜索历史卡片...</text>
+  <rect x="310" y="60" width="45" height="40" rx="20" ry="20" fill="white" stroke="#FF8C42" stroke-width="1"/>
+  <text x="332.5" y="85" font-family="Arial" font-size="14" fill="#FF8C42" text-anchor="middle">筛选</text>
+  
+  <!-- 筛选标签 -->
+  <rect x="20" y="110" width="60" height="30" rx="15" ry="15" fill="#FF8C42"/>
+  <text x="50" y="130" font-family="Arial" font-size="12" fill="white" text-anchor="middle">全部</text>
+  <rect x="90" y="110" width="60" height="30" rx="15" ry="15" fill="#f5f5f5"/>
+  <text x="120" y="130" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">励志</text>
+  <rect x="160" y="110" width="60" height="30" rx="15" ry="15" fill="#f5f5f5"/>
+  <text x="190" y="130" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">诗歌</text>
+  <rect x="230" y="110" width="60" height="30" rx="15" ry="15" fill="#f5f5f5"/>
+  <text x="260" y="130" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">哲理</text>
+  
+  <!-- 卡片列表 -->
+  <!-- 卡片1 -->
+  <rect x="20" y="150" width="335" height="100" rx="16" ry="16" fill="white" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.05));"/>
+  <text x="30" y="170" font-family="Arial" font-size="12" fill="#999999">2024-01-15</text>
+  <rect x="30" y="180" width="50" height="20" rx="10" ry="10" fill="#f0f0f0"/>
+  <text x="55" y="195" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle">励志语录</text>
+  <text x="90" y="195" font-family="Arial" font-size="14" fill="#333333">相信自己，你能行！</text>
+  <text x="250" y="230" font-family="Arial" font-size="12" fill="#999999">❤️ 3</text>
+  <text x="290" y="230" font-family="Arial" font-size="12" fill="#999999">👍 5</text>
+  
+  <!-- 卡片2 -->
+  <rect x="20" y="260" width="335" height="100" rx="16" ry="16" fill="white" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.05));"/>
+  <text x="30" y="280" font-family="Arial" font-size="12" fill="#999999">2024-01-14</text>
+  <rect x="30" y="290" width="50" height="20" rx="10" ry="10" fill="#f0f0f0"/>
+  <text x="55" y="305" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle">现代诗歌</text>
+  <text x="90" y="305" font-family="Arial" font-size="14" fill="#333333">生活如诗，诗如生活...</text>
+  <text x="250" y="340" font-family="Arial" font-size="12" fill="#999999">❤️ 7</text>
+  <text x="290" y="340" font-family="Arial" font-size="12" fill="#999999">👍 2</text>
+  
+  <!-- 卡片3 -->
+  <rect x="20" y="370" width="335" height="100" rx="16" ry="16" fill="white" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.05));"/>
+  <text x="30" y="390" font-family="Arial" font-size="12" fill="#999999">2024-01-13</text>
+  <rect x="30" y="400" width="50" height="20" rx="10" ry="10" fill="#f0f0f0"/>
+  <text x="55" y="415" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle">哲理短文</text>
+  <text x="90" y="415" font-family="Arial" font-size="14" fill="#333333">人生就像一场旅行，重要的不是目的地...</text>
+  <text x="250" y="450" font-family="Arial" font-size="12" fill="#999999">❤️ 2</text>
+  <text x="290" y="450" font-family="Arial" font-size="12" fill="#999999">👍 8</text>
+  
+  <!-- 底部导航栏 -->
+  <rect x="0" y="623" width="375" height="44" fill="white"/>
+  <text x="62.5" y="647" font-family="Arial" font-size="24" fill="#999999" text-anchor="middle">🏠</text>
+  <text x="187.5" y="647" font-family="Arial" font-size="24" fill="#FF8C42" text-anchor="middle">📜</text>
+  <text x="312.5" y="647" font-family="Arial" font-size="24" fill="#999999" text-anchor="middle">👤</text>
+</svg>

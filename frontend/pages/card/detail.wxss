@@ -1,0 +1,296 @@
+/* 卡片详情页面样式 - 匹配UI原型 */
+
+/* 主容器 */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFD194 0%, #FF8C42 100%);
+}
+
+/* 顶部导航 */
+.navbar {
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  position: relative;
+}
+
+.back-btn {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.back-btn:active {
+  transform: scale(0.9);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.back-icon {
+  font-size: 32rpx;
+  color: white;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.placeholder {
+  width: 60rpx;
+}
+
+/* 加载状态 */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400rpx;
+  gap: 40rpx;
+}
+
+.loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 6rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 6rpx solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  color: white;
+  font-size: 28rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 卡片内容 */
+.card-content {
+  padding: 40rpx;
+}
+
+/* 卡片主体 */
+.card-main {
+  margin-bottom: 60rpx;
+}
+
+.card-container {
+  background: white;
+  border-radius: 32rpx;
+  padding: 80rpx 60rpx;
+  text-align: center;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.15);
+  min-height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-text {
+  font-size: 36rpx;
+  line-height: 1.8;
+  color: #333333;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.card-author {
+  font-size: 28rpx;
+  color: #666666;
+  font-style: italic;
+  text-align: right;
+  width: 100%;
+}
+
+/* 卡片信息 */
+.card-info {
+  background: white;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.action-btn {
+  flex: 1;
+  background: white;
+  border: none;
+  border-radius: 24rpx;
+  padding: 40rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.action-btn.favorited {
+  background: #ffe6e6;
+}
+
+.action-btn.liked {
+  background: #e6f3ff;
+}
+
+.btn-icon {
+  font-size: 48rpx;
+}
+
+.btn-text {
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+.btn-count {
+  font-size: 20rpx;
+  color: #666666;
+}
+
+/* 更多操作 */
+.more-actions {
+  display: flex;
+  gap: 20rpx;
+}
+
+.more-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 24rpx;
+  padding: 30rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+  transition: all 0.3s ease;
+}
+
+.more-btn:active {
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.more-icon {
+  font-size: 40rpx;
+}
+
+.more-text {
+  font-size: 24rpx;
+  color: white;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 200rpx);
+  padding: 60rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 120rpx;
+  margin-bottom: 40rpx;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.empty-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20rpx;
+}
+
+.empty-desc {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 60rpx;
+}
+
+.empty-btn {
+  padding: 24rpx 48rpx;
+  background: white;
+  color: #FF8C42;
+  border: none;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.empty-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20rpx);
+  }
+  60% {
+    transform: translateY(-10rpx);
+  }
+}
+
+@import "share.wxss";

@@ -1,0 +1,19 @@
+<!-- 自定义TAB栏 -->
+<view class="custom-tab-bar" style="{{tabBarStyle}}">
+  <view 
+    wx:for="{{tabList}}" 
+    wx:key="index"
+    class="tab-item {{currentTab === index ? 'active' : ''}}"
+    data-index="{{index}}"
+    bindtap="onTabClick"
+  >
+    <view class="tab-icon-wrapper">
+      <view class="tab-icon {{currentTab === index ? 'icon-active' : 'icon-normal'}}">
+        <text class="iconfont {{item.icon}}"></text>
+      </view>
+      <!-- 添加切换动效 -->
+      <view class="tab-ripple {{currentTab === index ? 'ripple-active' : ''}}"></view>
+    </view>
+    <text class="tab-text {{currentTab === index ? 'text-active' : 'text-normal'}}">{{item.text}}</text>
+  </view>
+</view>

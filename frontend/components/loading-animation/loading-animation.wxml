@@ -1,0 +1,40 @@
+<!--components/loading-animation/loading-animation.wxml-->
+<view class="loading-container {{isVisible ? 'visible' : 'hidden'}}" wx:if="{{isVisible}}">
+  
+  <!-- 点状动画 -->
+  <view wx:if="{{type === 'dots'}}" class="dots-container {{size}}">
+    <view class="dot dot-1" style="background-color: {{color}}" animation="{{animationData}}"></view>
+    <view class="dot dot-2" style="background-color: {{color}}" animation="{{animationData}}"></view>
+    <view class="dot dot-3" style="background-color: {{color}}" animation="{{animationData}}"></view>
+  </view>
+
+  <!-- 旋转动画 -->
+  <view wx:if="{{type === 'spinner'}}" class="spinner-container {{size}}">
+    <view class="spinner" style="border-color: {{color}} transparent transparent transparent" animation="{{animationData}}"></view>
+  </view>
+
+  <!-- 脉冲动画 -->
+  <view wx:if="{{type === 'pulse'}}" class="pulse-container {{size}}">
+    <view class="pulse" style="background-color: {{color}}" animation="{{animationData}}"></view>
+  </view>
+
+  <!-- 卡片翻转动画 -->
+  <view wx:if="{{type === 'cards'}}" class="cards-container {{size}}">
+    <view class="card-flip" animation="{{animationData}}">
+      <view class="card-front" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+        <text class="card-icon">✨</text>
+      </view>
+      <view class="card-back" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
+        <text class="card-icon">🌟</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载文字 -->
+  <text class="loading-text {{size}}" wx:if="{{loadingText}}">{{loadingText}}</text>
+
+  <!-- 进度条 -->
+  <view class="progress-bar" wx:if="{{type === 'progress'}}">
+    <view class="progress-fill" style="background-color: {{color}}"></view>
+  </view>
+</view>

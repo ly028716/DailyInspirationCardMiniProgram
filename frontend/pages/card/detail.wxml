@@ -1,0 +1,80 @@
+<!-- 卡片详情页面 -->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="navbar">
+    <button class="back-btn" bindtap="onBack">
+      <text class="back-icon">←</text>
+    </button>
+    <text class="title">卡片详情</text>
+    <view class="placeholder"></view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 卡片内容 -->
+  <view class="card-content" wx:if="{{!loading && card}}">
+    <!-- 卡片主体 -->
+    <view class="card-main">
+      <view class="card-container">
+        <text class="card-text">{{card.content}}</text>
+        <text class="card-author" wx:if="{{card.author}}">—— {{card.author}}</text>
+      </view>
+    </view>
+
+    <!-- 卡片信息 -->
+    <view class="card-info">
+      <view class="info-item">
+        <text class="info-label">类型</text>
+        <text class="info-value">{{card.typeText || '励志'}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">日期</text>
+        <text class="info-value">{{card.date || '2025-09-07'}}</text>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <button class="action-btn {{isFavorited ? 'favorited' : ''}}" bindtap="onToggleFavorite">
+        <text class="btn-icon">{{isFavorited ? '❤️' : '🤍'}}</text>
+        <text class="btn-text">{{isFavorited ? '已收藏' : '收藏'}}</text>
+      </button>
+      
+      <button class="action-btn {{isLiked ? 'liked' : ''}}" bindtap="onToggleLike">
+        <text class="btn-icon">{{isLiked ? '👍' : '👍🏻'}}</text>
+        <text class="btn-text">{{isLiked ? '已点赞' : '点赞'}}</text>
+        <text class="btn-count" wx:if="{{likes > 0}}">{{likes}}</text>
+      </button>
+    </view>
+
+    <!-- 其他操作 -->
+    <view class="more-actions">
+      <button class="more-btn" bindtap="onCopyContent">
+        <text class="more-icon">📋</text>
+        <text class="more-text">复制内容</text>
+      </button>
+      
+      <button class="more-btn" bindtap="onShare">
+        <text class="more-icon">📤</text>
+        <text class="more-text">分享</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{!loading && !card}}">
+    <view class="empty-icon">📭</view>
+    <text class="empty-title">卡片不存在</text>
+    <text class="empty-desc">可能已被删除或移动</text>
+    <button class="empty-btn" bindtap="onBack">
+      <text>返回首页</text>
+    </button>
+  </view>
+
+  <!-- 分享面板 -->
+  <include src="share.wxml"/>
+</view>

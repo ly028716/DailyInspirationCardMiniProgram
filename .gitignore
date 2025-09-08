@@ -1,0 +1,29 @@
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+
+# Env & secrets
+.env
+*.env
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# Databases & data
+*.db
+*.sqlite
+backend/data/
+data/
+
+# WeChat DevTools local configs
+frontend/project.private.config.json
+
+# Build / logs
+dist/
+build/
+*.log
+
+# Tools
+.codebuddy/

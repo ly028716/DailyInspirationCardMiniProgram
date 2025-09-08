@@ -1,0 +1,89 @@
+<!-- 个人中心页面 -->
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-section">
+    <view class="avatar-container">
+      <view class="avatar" wx:if="{{userInfo.avatarUrl}}">
+        <image 
+          class="avatar-img" 
+          src="{{userInfo.avatarUrl}}" 
+          mode="aspectFill"
+        ></image>
+      </view>
+      <view class="avatar default-avatar" wx:else>
+        <text class="avatar-emoji">👤</text>
+      </view>
+    </view>
+    <text class="username">{{userInfo.nickName || '微信用户'}}</text>
+    <text class="user-desc">每日灵感，伴你成长</text>
+    
+    <button 
+      class="login-btn" 
+      bindtap="onGetUserInfo"
+      wx:if="{{!userInfo.nickName}}"
+    >
+      <text>立即登录</text>
+    </button>
+  </view>
+
+  <!-- 统计数据 -->
+  <view class="stats-section">
+    <view class="stat-item">
+      <text class="stat-number">{{stats.favoriteCards || 0}}</text>
+      <text class="stat-label">收藏</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">{{stats.totalCards || 0}}</text>
+      <text class="stat-label">浏览</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">{{stats.consecutiveDays || 0}}</text>
+      <text class="stat-label">连续天数</text>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-section">
+    <view class="menu-item" bindtap="onFavorites">
+      <view class="menu-icon">⭐</view>
+      <text class="menu-title">我的收藏</text>
+      <text class="menu-arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="onHistory">
+      <view class="menu-icon">📜</view>
+      <text class="menu-title">浏览历史</text>
+      <text class="menu-arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="onSettings">
+      <view class="menu-icon">⚙️</view>
+      <text class="menu-title">设置</text>
+      <text class="menu-arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="onAbout">
+      <view class="menu-icon">ℹ️</view>
+      <text class="menu-title">关于我们</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <!-- 版本信息 -->
+  <view class="footer">
+    <text class="version">版本 1.0.0</text>
+  </view>
+</view>
+
+<!-- 底部导航栏 -->
+<view class="tabbar">
+  <view class="tab-item" bindtap="onHome">
+    <text class="tab-icon">🏠</text>
+  </view>
+  <view class="tab-item" bindtap="onHistory">
+    <text class="tab-icon">📜</text>
+  </view>
+  <view class="tab-item active">
+    <text class="tab-icon">👤</text>
+  </view>
+</view>

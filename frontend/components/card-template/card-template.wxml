@@ -1,0 +1,91 @@
+<!--components/card-template/card-template.wxml-->
+<view class="card-container {{animationClass}}" 
+      style="background: {{backgroundStyle.background}}; color: {{backgroundStyle.color}}; font-family: {{backgroundStyle.fontFamily}}"
+      bindtap="onCardTap">
+  
+  <!-- 加载骨架屏 -->
+  <view wx:if="{{isLoading}}" class="skeleton-container">
+    <view class="skeleton-header"></view>
+    <view class="skeleton-content">
+      <view class="skeleton-line"></view>
+      <view class="skeleton-line short"></view>
+      <view class="skeleton-line"></view>
+    </view>
+    <view class="skeleton-footer"></view>
+  </view>
+
+  <!-- 卡片内容 -->
+  <view wx:else class="card-content {{templateType}}">
+    <!-- 装饰元素 -->
+    <view class="decoration {{templateType}}" wx:if="{{templateType !== 'minimal'}}">
+      <view class="decoration-dot"></view>
+      <view class="decoration-line"></view>
+    </view>
+
+    <!-- 卡片类型标签 -->
+    <view class="card-type-badge {{templateType}}">
+      <text class="type-text">{{cardData.type === 'inspirational' ? '励志' : cardData.type === 'poetry' ? '诗歌' : '哲理'}}</text>
+    </view>
+
+    <!-- 卡片内容 -->
+    <view class="card-main">
+      <view class="content-text {{templateType}}" selectable>
+        {{cardData.content}}
+      </view>
+      
+      <!-- 分隔线 -->
+      <view class="divider {{templateType}}"></view>
+      
+      <!-- 卡片信息 -->
+      <view class="card-info">
+        <text class="date-text">{{cardData.generate_date}}</text>
+        <text class="like-count" wx:if="{{cardData.like_count}}">❤️ {{cardData.like_count}}</text>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-buttons {{templateType}}">
+      <button class="action-btn favorite {{templateType}} {{cardData.isFavorited ? 'favorited' : ''}}" 
+              bindtap="onFavoriteTap"
+              hover-class="btn-hover">
+        <text class="btn-icon">{{cardData.isFavorited ? '❤️' : '🤍'}}</text>
+        <text class="btn-text">{{cardData.isFavorited ? '已收藏' : '收藏'}}</text>
+      </button>
+      
+      <button class="action-btn share {{templateType}}" 
+              bindtap="onShareTap"
+              hover-class="btn-hover">
+        <text class="btn-icon">📤</text>
+        <text class="btn-text">分享</text>
+      </button>
+    </view>
+
+    <!-- 模板特定装饰 -->
+    <view class="template-specific {{templateType}}">
+      <!-- 极简模板 -->
+      <view wx:if="{{templateType === 'minimal'}}" class="minimal-decoration">
+        <view class="corner top-left"></view>
+        <view class="corner bottom-right"></view>
+      </view>
+
+      <!-- 文艺模板 -->
+      <view wx:if="{{templateType === 'artistic'}}" class="artistic-decoration">
+        <view class="watermark">✨</view>
+        <view class="gradient-overlay"></view>
+      </view>
+
+      <!-- 活力模板 -->
+      <view wx:if="{{templateType === 'vibrant'}}" class="vibrant-decoration">
+        <view class="bubble bubble-1"></view>
+        <view class="bubble bubble-2"></view>
+        <view class="bubble bubble-3"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载动画 -->
+  <view class="loading-overlay" wx:if="{{isLoading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在生成今日灵感...</text>
+  </view>
+</view>
