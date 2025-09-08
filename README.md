@@ -211,9 +211,9 @@ docker-compose ps
 
 ## 📞 联系方式
 
-- 项目维护者：[Your Name](mailto:your.email@domain.com)
-- 项目主页：https://github.com/your-username/ai-inspiration-cards
-- 问题反馈：[Issues](https://github.com/your-username/ai-inspiration-cards/issues)
+- 项目维护者：[ly028716] (https://github.com/ly028716)
+- 项目主页：https://github.com/ly028716/DailyInspirationCardMiniProgram
+- 问题反馈：[Issues](https://github.com/ly028716/DailyInspirationCardMiniProgram/issues)
 
 ---
 
