@@ -31,7 +31,7 @@ Page({
         // 尝试从API获取卡片详情
         const response = await new Promise((resolve, reject) => {
           wx.request({
-            url: `https://api.example.com/api/cards/${cardId}`,
+            url: `http://localhost:8000/api/cards/${cardId}`,
             method: 'GET',
             header: {
               'Authorization': `Bearer ${token}`
@@ -114,7 +114,7 @@ Page({
       if (token) {
         const response = await new Promise((resolve, reject) => {
           wx.request({
-            url: `https://api.example.com/api/cards/${this.data.card.id}/favorite`,
+            url: `http://localhost:8000/api/cards/${this.data.card.id}/favorite`,
             method: newFavorited ? 'POST' : 'DELETE',
             header: {
               'Authorization': `Bearer ${token}`
@@ -195,7 +195,7 @@ Page({
       if (token) {
         const response = await new Promise((resolve, reject) => {
           wx.request({
-            url: `https://api.example.com/api/cards/${this.data.card.id}/like`,
+            url: `http://localhost:8000/api/cards/${this.data.card.id}/like`,
             method: 'POST',
             header: {
               'Authorization': `Bearer ${token}`,

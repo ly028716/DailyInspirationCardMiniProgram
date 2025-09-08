@@ -12,7 +12,7 @@ function debugAuth() {
     }
     
     // 2. 检查网络配置
-    console.log("当前API基础URL:", "https://api.example.com/api");
+    console.log("当前API基础URL:", "http://localhost:8000/api");
     console.log("⚠️ 注意：微信小程序不支持localhost，请使用IP地址");
     
     // 3. 提供修复方案

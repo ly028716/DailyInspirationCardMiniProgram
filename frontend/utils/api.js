@@ -1,5 +1,5 @@
 // API请求封装工具类
-const baseUrl = 'https://api.example.com/api'
+const baseUrl = 'http://localhost:8000/api'
 
 class Api {
   constructor() {

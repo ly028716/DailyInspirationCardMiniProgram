@@ -1,0 +1,43 @@
+<svg width="375" height="667" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <linearGradient id="homeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#FFD194"/>
+    <stop offset="100%" stop-color="#FF8C42"/>
+  </linearGradient>
+  <rect width="375" height="667" fill="url(#homeGradient)"/>
+  
+  <!-- 顶部导航栏 -->
+  <rect x="0" y="0" width="375" height="44" fill="rgba(255,255,255,0.2)"/>
+  <text x="30" y="28" font-family="Arial" font-size="18" fill="white">🔍</text>
+  <text x="345" y="28" font-family="Arial" font-size="18" fill="white">❤️</text>
+  
+  <!-- 卡片容器 -->
+  <rect x="20" y="80" width="335" height="400" rx="16" ry="16" fill="rgba(255,255,255,0.95)" style="filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.1));"/>
+  
+  <!-- 卡片标题 -->
+  <text x="187.5" y="120" font-family="Arial" font-size="18" fill="#333333" text-anchor="middle" font-weight="bold">今日灵感</text>
+  
+  <!-- 卡片内容 -->
+  <text x="187.5" y="250" font-family="Arial" font-size="24" fill="#333333" text-anchor="middle" font-style="italic">"生活就像一盒巧克力，</text>
+  <text x="187.5" y="290" font-family="Arial" font-size="24" fill="#333333" text-anchor="middle" font-style="italic">你永远不知道下一颗是什么味道。"</text>
+  
+  <!-- 卡片来源 -->
+  <text x="187.5" y="350" font-family="Arial" font-size="14" fill="#999999" text-anchor="middle">— 阿甘正传</text>
+  
+  <!-- 互动按钮 -->
+  <circle cx="100" cy="420" r="25" fill="#FF8C42"/>
+  <text x="100" y="428" font-family="Arial" font-size="20" fill="white" text-anchor="middle">❤️</text>
+  
+  <circle cx="275" cy="420" r="25" fill="#FF8C42"/>
+  <text x="275" y="428" font-family="Arial" font-size="20" fill="white" text-anchor="middle">👍</text>
+  
+  <!-- 换一张按钮 -->
+  <rect x="87.5" y="500" width="200" height="50" rx="25" ry="25" fill="white" style="filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.1));"/>
+  <text x="187.5" y="530" font-family="Arial" font-size="16" fill="#FF8C42" text-anchor="middle">换一张灵感卡片</text>
+  
+  <!-- 底部导航栏 -->
+  <rect x="0" y="623" width="375" height="44" fill="white"/>
+  <text x="62.5" y="647" font-family="Arial" font-size="24" fill="#FF8C42" text-anchor="middle">🏠</text>
+  <text x="187.5" y="647" font-family="Arial" font-size="24" fill="#999999" text-anchor="middle">📜</text>
+  <text x="312.5" y="647" font-family="Arial" font-size="24" fill="#999999" text-anchor="middle">👤</text>
+</svg>

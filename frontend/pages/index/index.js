@@ -66,7 +66,7 @@ Page({
           if (res.code) {
             // 发送code到后端获取token
             wx.request({
-              url: 'https://api.example.com/api/users/login',
+              url: 'http://localhost:8000/api/users/login',
               method: 'POST',
               data: { code: res.code },
               success: (response) => {
@@ -108,7 +108,7 @@ Page({
       if (token) {
         const response = await new Promise((resolve, reject) => {
           wx.request({
-            url: 'https://api.example.com/api/cards/daily',
+            url: 'http://localhost:8000/api/cards/daily',
             method: 'GET',
             header: {
               'Authorization': `Bearer ${token}`
@@ -168,7 +168,7 @@ Page({
         // 尝试生成新卡片
         const response = await new Promise((resolve, reject) => {
           wx.request({
-            url: 'https://api.example.com/api/cards/generate',
+            url: 'http://localhost:8000/api/cards/generate',
             method: 'POST',
             header: {
               'Authorization': `Bearer ${token}`,
@@ -256,7 +256,7 @@ Page({
       if (token) {
         const response = await new Promise((resolve, reject) => {
           wx.request({
-            url: `https://api.example.com/api/cards/${dailyCard.id}/favorite`,
+            url: `http://localhost:8000/api/cards/${dailyCard.id}/favorite`,
             method: newLiked ? 'POST' : 'DELETE',
             header: {
               'Authorization': `Bearer ${token}`

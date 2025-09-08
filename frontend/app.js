@@ -2,7 +2,7 @@ App({
   globalData: {
     userInfo: null,
     openid: null,
-    baseUrl: 'https://api.example.com/api',
+    baseUrl: 'http://localhost:8000/api',
     hasLogin: false
   },
 

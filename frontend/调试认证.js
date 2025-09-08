@@ -113,7 +113,7 @@ class AuthDebugger {
 
         // 3. 测试网络连接
         wx.request({
-            url: 'https://api.example.com/api/health',
+            url: 'http://localhost:8000/api/health',
             method: 'GET',
             success: (res) => {
                 console.log("   ✅ 网络连接正常", res.statusCode)
